@@ -19,7 +19,12 @@ const app = express();
 
 app.use(bodyParser.json());
 
+app.post('/api/articles/:name/upvote', (req, res) => {
+    const articleName = req.params.name;
 
+    articlesInfo[articleName].upvotes += 1;
+    res.status(200).send(`$${articleName} now has ${articlesInfo[articleName].upvotes} upvotes`)
+})
 
 app.post('/hello', (req, res) => res.send(`Hello ${req.body.name}`))
 
