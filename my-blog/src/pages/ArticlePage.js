@@ -5,6 +5,13 @@ import articleContent from './article-content';
 
 
 const ArticlePage = ({ match }) => {
+
+    fetch('/api/articles/...', {
+        method: 'POST',
+        body:
+    })
+
+
     const name = match.params.name;
     const article = articleContent.find(article => article.name === name)
 
