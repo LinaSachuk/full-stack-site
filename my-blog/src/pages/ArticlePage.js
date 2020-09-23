@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ArticleList from '../components/ArticlesList';
 import NotFoundPage from './NotFoundPage';
 import articleContent from './article-content';
@@ -6,14 +6,12 @@ import articleContent from './article-content';
 
 const ArticlePage = ({ match }) => {
 
-    fetch('/api/articles/...', {
-        method: 'POST',
-        body:
-    })
-
-
     const name = match.params.name;
     const article = articleContent.find(article => article.name === name)
+
+    const [articleInfo, setArticleInfo] = useState({ upvotes: 0, comments: [] });
+
+
 
     if (!article) return <NotFoundPage />
 
