@@ -25,13 +25,13 @@ const ArticlePage = ({ match }) => {
 
     return (
         <>
-        <h1>{article.title}</h1>
-        <p>This post has been upvoted {articleInfo.upvotes} times</p>
-        {article.content.map((paragraph, key) => (
-            <p key={key}>{paragraph}</p>
-        ))}
-        <h3>Other Articles:</h3>
-        <ArticlesList articles={otherArticles} />
+            <h1>{article.title}</h1>
+            <p>This post has been upvoted {articleInfo.upvotes} times</p>
+            {article.content.map((paragraph, key) => (
+                <p key={key}>{paragraph}</p>
+            ))}
+            <h3>Other Articles:</h3>
+            <ArticlesList articles={otherArticles} />
         </>
     );
 }
